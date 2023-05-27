@@ -1,3 +1,7 @@
+# Humpback Whale Fluke Identification
+
+This notebook was created by Roy Gonen and Amit Aharoni as part of the Data Science workshop at the Open University of Israel, Spring of 2022.
+
 The notebook is a bit cluttered as the course requirement was to have all stages and experiments in a single notebook.
 Might refactor later and extract only the good stuff :)
 
@@ -5,10 +9,20 @@ It is also very large (contains many images), so Github won't render it. You can
 
 <br>
 
-# Humpback Whale Fluke Identification
+# Table of contents
+* [Introduction](#introduction)
+    * [Purpose and goal definition](#purpose)
+    * [Challenges dealing with whale photos](#challenges)
+    * [Evaluation](#evaluation)
+* [Summary](#summary)
+    * [EDA](#eda)
+    * [Fluke Detection](#fluke-detection)
+    * [Model](#model)
+    * [Explainability](#explainability)
 
-This notebook was created by Roy Gonen and Amit Aharoni as part of the Data Science workshop at the Open University of Israel, Spring of 2022.
+<br>
 
+# Introduction
 ## Purpose and goal definition
 
 whales play an important role in the marine ecosystem and their populations are under threat due to human activities such as pollution, overfishing, and habitat destruction. The hunting and killing of these animals can further harm their populations and disrupt the balance of the ecosystem. In addition, many of the methods used to hunt whales, such as harpoons and explosives, can cause unnecessary suffering and death for the animals, and harm the marine ecosystem as well.
@@ -30,8 +44,9 @@ In addition, most whales have one or just few photos labeled to them, making it 
 
 As defined by the Kaggle competition, out evaluation metric will be top 5 accuracy - meaning amount of photos that were labeled correctly from all the test photos, while allowing 5 different label guesses for each photos.
 
-# Table of Contents
+<br>
 
+# Summary
 ## 1. EDA
 
 We started with some exploratory data analysis (EDA) to familiarize ourselves with the raw data, it’s characteristics and difficulties.
