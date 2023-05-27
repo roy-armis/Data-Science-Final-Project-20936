@@ -30,7 +30,7 @@ whales play an important role in the marine ecosystem and their populations are 
 Scientists and researches use photos of whale flukes (basically their tails) to mointor them, and help the populations recover. Whale flukes are unique and contain different shapes, colors and markings. For decades this work has been done manually by individuals, causing many data discrepancies, identification mistakes and mostly - very slow and inefficient work.
 
 Happywhale is an organization that helps monitoring whales, and it gathered over 25,000 photos of whale flukes.
-They published a Kaggle competition, to help building an algorithm to identify individual whales from photos.
+They published a [Kaggle competition](https://www.kaggle.com/competitions/humpback-whale-identification), to help building an algorithm to identify individual whales from photos.
 
 ## Challenges dealing with whale photos
 
