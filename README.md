@@ -43,21 +43,28 @@ Two more challenges that we have faced due to the data structure are:
 - Most of the whales had very low number of instances in the data, with over 2000 whales having only one image, making it difficult for a neural network to learn (ie separating to train/validation)
   We also observed that images can be either grayscale or RGB, and in various shapes.
   Applying some traditional Computer Vision algorithms verified something we had felt all along the EDA - we need to find a way to crop only the whale fluke from the image to remove noisy background.
+![image](https://github.com/roy-armis/Data-Science-Final-Project-20936/blob/main/assets/bfmatcher-accurate-matches%20example.png)
 
 
 ## 2. Fluke Bounding Box Detection
 
 We explored some Object Detection models, and decided to go with YOLOv7, which we trained on a set of bounding box annotated images, and then predicted our images’ bounding boxes.
 We compared tout model results to a pertained zero-shot open-vocabulary model by Google, which had surprisingly good results, but not good enough for us to be confidence with.
+![image](https://github.com/roy-armis/Data-Science-Final-Project-20936/blob/main/assets/whale-fluke-detection-example.png)
 
 ## 3. Model
 
 Equipped with both good understanding of our data and its challenges, and with the ability to crop images correctly, we approached our main task - finding and training a model to classify whale fluke images to their individual whale ids.
 Initially we tried a naive traditional approach using HOG feature descriptor to extract features from the image and then pass those features to an SVM classifier, which didn’t return satisfying results.
+
 We soon realized that Deep Learning approaches would fit best to our problem, and specifically CNNs.
-We explored and experimented many models and loss functions to find an approach that is similar to face recognition tasks - Arcface. After some backbone selection and hyperparameter optimization, we finally had our complete architecture - ArcFace with EfficientNetV2 as the backbone, and for testing using the trained embedding features for each class, then performing cosine similarity to predict the most suitable class.
+We explored and experimented many models and loss functions to find an approach that is similar to face recognition tasks - Arcface. 
+
+After some backbone selection and hyperparameter optimization, we finally had our complete architecture - ArcFace with EfficientNetV2 as the backbone, and for testing using the trained embedding features for each class, then performing cosine similarity to predict the most suitable class.
 During prediction we also had to address our new_whale challenge and we solved it by finding a threshold that marks when we can predict the class new_whale.
+![image](https://github.com/roy-armis/Data-Science-Final-Project-20936/blob/main/assets/final-kaggle-score.png)
 
 ## 4. Performance
 
 Lastly, we were curious to understand what our network has learnt and after sadly failing to use SHAP’s DeepExplainer, we decided to implement Activation Maps which helped us visualize the locations where the network focused and used to make it class prediction, such as special marks and fluke shapes.
+![image](https://github.com/roy-armis/Data-Science-Final-Project-20936/blob/main/assets/activation-map-example.png)
